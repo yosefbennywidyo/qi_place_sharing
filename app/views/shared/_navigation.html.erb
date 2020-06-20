@@ -2,9 +2,15 @@
   <div class="inner">
     <h3 class="masthead-brand">PlaceSharing</h3>
     <nav class="nav nav-masthead justify-content-center">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link" href="/places">Places</a>
-      <a class="nav-link" href="/users">Users</a>
+      <a class="nav-link text-white" href="/">Home</a>
+      <a class="nav-link text-white" href="/places">Places</a>
+      <a class="nav-link text-white" href="/users">Users</a>
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path, :class => "nav-link text-white", :method => :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, :class => "nav-link text-white" %>
+        <%= link_to "Sign in", new_user_session_path, :class => "nav-link text-white" %>
+      <% end %>
     </nav>
   </div>
 </header>
