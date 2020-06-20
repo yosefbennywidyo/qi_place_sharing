@@ -1,0 +1,2 @@
+class PlacePermission < ApplicationRecord
+end
