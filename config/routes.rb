@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :places
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    confirmations: 'users/confirmations',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations',
+    sessions: 'users/sessions',
+    unlocks: 'users/unlocks'
   }
 
   match '/users',     to: 'users#index',  via: 'get'
