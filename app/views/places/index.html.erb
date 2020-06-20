@@ -1,23 +1,11 @@
 <main role="main" class="inner cover">
-  <h1 class="cover-heading">Places List</h1>
-  <h3 class="cover-heading">Places shared by PlaceSharing users</h1>
-    <div class="row">
-    <% @places.each do |place| %>
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title text-info"><%= place.name %></h5>
-            <p class="card-text text-muted">Shared by: <%= place.public_status %></p>
-            <%= link_to 'Show', place, :class => "btn btn-outline-info" %>
-            <%= link_to 'Edit', edit_place_path(place), :class => "btn btn-outline-warning" %>
-            <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
-          </div>
-        </div>
-        <p></p>
-      </div>
-    <% end %>
-    </div>
-    <div class="row">
-      <%= link_to 'New Place', new_place_path, :class => "btn btn-success btn-block" %>
-    </div>
+  <h1 class="cover-heading">Public Places</h1>
+  <h3 class="cover-heading">Place shared by PlaceSharing users for public</h3>
+  <%= render 'shared/places/check_user_can_create' %>
+  <%= render 'shared/places/public_places' %>
+<% if current_user %>
+  <h1 class="cover-heading">Shared Places Between Users</h1>
+  <h3 class="cover-heading">Place shared between PlaceSharing users</h3>
+  <%= render 'shared/places/shared_places' %>
+<% end %>
 </main>

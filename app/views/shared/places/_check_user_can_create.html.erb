@@ -1,0 +1,12 @@
+<% if current_user %>  
+  <div class="row">
+    <%= link_to 'New Place', new_place_path, :class => "btn btn-success btn-block" %>
+  </div>
+  <div class="row">
+    <br>
+  </div>
+<% else %>
+  <div class="row">
+    <br>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+<% if @place_permissions_share_with_current_user.nil? %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-info">No one share Place with you</h5>
+            <p class="card-text text-muted">Don't worry, start sharing your Place to other users</p>          
+            <%= link_to 'Create place to share with other user', new_place_path, :class => "btn btn-outline-info btn-block" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="row">
+    <% @places_share_with_current_user.each do |place| %>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-info"><%= place.name %></h5>
+            <p class="card-text text-muted">Shared by: <%= place.users.pluck("username").first %></p>          
+          <% if current_user %>
+            <% if current_user.id === place.place_permissions.pluck("user_id").first%>
+              <%= link_to 'Edit', edit_place_path(place), :class => "btn btn-outline-warning" %>
+              <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
+            <% else %>
+              <%= link_to 'Show', place, :class => "btn btn-outline-info btn-block" %>
+            <% end %>
+          <% else %>
+            <%= link_to 'Show', place, :class => "btn btn-outline-info btn-block" %>
+          <% end %>
+          </div>
+      </div>
+      <p></p>
+    </div>
+    <% end %>
+  </div>
+<% end %>
