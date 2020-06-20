@@ -1,24 +1,14 @@
+<div class="col-sm-12">
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Lat:</strong>
-  <%= @place.lat %>
-</p>
-
-<p>
-  <strong>Lon:</strong>
-  <%= @place.lon %>
-</p>
-
-<p>
-  <strong>Public status:</strong>
-  <%= @place.public_status %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @place.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
+  <div class="card">
+  <div id="map" class="map" style="width: 100%; height: 400px"></div>
+    <div class="card-body">
+      <h5 class="card-title text-info"><%= @place.name %></h5>
+      <p class="card-text text-muted">Latitude: <%= @place.lat %></p>
+      <p class="card-text text-muted">Longitude: <%= @place.lat %></p>
+      <p class="card-text text-muted">Shared by: <%= @place.public_status %></p>
+      <%= link_to 'Edit', edit_place_path(@place), :class => "btn btn-outline-warning" %>
+      <%= link_to 'Back', places_path, :class => "btn btn-outline-danger" %>
+    </div>
+  </div>
+</div>

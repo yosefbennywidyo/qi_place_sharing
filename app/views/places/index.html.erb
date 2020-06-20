@@ -1,33 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Places</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Lat</th>
-      <th>Lon</th>
-      <th>Public status</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<main role="main" class="inner cover">
+  <h1 class="cover-heading">Places List</h1>
+  <h3 class="cover-heading">Places shared by PlaceSharing users</h1>
+    <div class="row">
     <% @places.each do |place| %>
-      <tr>
-        <td><%= place.lat %></td>
-        <td><%= place.lon %></td>
-        <td><%= place.public_status %></td>
-        <td><%= place.user_id %></td>
-        <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-info"><%= place.name %></h5>
+            <p class="card-text text-muted">Shared by: <%= place.public_status %></p>
+            <%= link_to 'Show', place, :class => "btn btn-outline-info" %>
+            <%= link_to 'Edit', edit_place_path(place), :class => "btn btn-outline-warning" %>
+            <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
+          </div>
+        </div>
+        <p></p>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Place', new_place_path %>
+    </div>
+    <div class="row">
+      <%= link_to 'New Place', new_place_path, :class => "btn btn-success btn-block" %>
+    </div>
+</main>

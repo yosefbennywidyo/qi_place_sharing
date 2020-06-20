@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :lat %>
-    <%= form.text_field :lat %>
+  <div class="form-group">
+    <%= form.label :lat, "Latitude" %>
+    <%= form.text_field :lat, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :lon %>
-    <%= form.text_field :lon %>
+    <%= form.label :lon, "Longitude" %>
+    <%= form.text_field :lon, class: "form-control" %>
   </div>
 
   <div class="field">
@@ -26,12 +26,8 @@
     <%= form.check_box :public_status %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-outline-primary btn-block" %>
   </div>
 <% end %>
