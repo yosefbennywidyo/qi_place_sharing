@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
   resources :places
-  devise_for :users, controllers: {
-    confirmations: 'users/confirmations',
-    passwords: 'users/passwords',
-    registrations: 'users/registrations',
-    sessions: 'users/sessions',
-    unlocks: 'users/unlocks'
-  }
+  devise_for :users
 
   match '/users',     to: 'users#index',  via: 'get'
   match '/:username', to: 'users#show',   via: 'get', as: :profile
