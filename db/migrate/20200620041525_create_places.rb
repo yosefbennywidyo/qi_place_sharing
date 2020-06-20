@@ -1,10 +1,10 @@
 class CreatePlaces < ActiveRecord::Migration[6.0]
   def change
     create_table :places do |t|
-      t.string :lat
-      t.string :lon
-      t.boolean :public_status
-      t.references :user, null: false, foreign_key: true
+      t.string :name, null: false
+      t.string :lat, precision: 12, scale: 7, default: "0.0"
+      t.string :lon, precision: 12, scale: 7, default: "0.0"
+      t.boolean :public_status, default: false
 
       t.timestamps
     end
