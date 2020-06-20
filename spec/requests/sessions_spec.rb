@@ -8,7 +8,7 @@ RSpec.describe "Sessions" do
     
     sign_out user
     get root_path
-    expect(response).not_to render_template("home/index")
+    expect(response).to render_template("home/index")
 
     user_test = User.find_by_email("test@test.com")
     user_test.destroy
