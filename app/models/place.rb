@@ -1,3 +1,4 @@
 class Place < ApplicationRecord
-  belongs_to :user
+  has_many :place_permissions
+  has_many :users, through: :place_permissions
 end
