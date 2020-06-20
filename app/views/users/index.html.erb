@@ -1,3 +1,14 @@
-<% @users.each do |user| %>
-  <%= link_to user.username, profile_path(user.username) %></br>
-<% end %>
+<div class="row">
+  <% @users.each do |user| %>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-info"><%= user.username %></h5>
+          <p class="card-text text-muted">Shared places: </p>
+          <%= link_to user.username, profile_path(user.username), :class => "btn btn-outline-info" %>
+        </div>
+      </div>
+      <p></p>
+    </div>
+  <% end %>
+</div>
