@@ -45,3 +45,16 @@ rails s
 cd qi_place_sharing
 rspec
 ```
+
+## Testing the app
+All user email using `password` as their password
+- user0@placesharing.com
+- user1@placesharing.com
+- user2@placesharing.com
+- user3@placesharing.com
+- user4@placesharing.com
+- user5@placesharing.com
+- user6@placesharing.com
+- user7@placesharing.com
+- user8@placesharing.com
+- user9@placesharing.com
