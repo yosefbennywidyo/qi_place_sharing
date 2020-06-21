@@ -1,10 +1,28 @@
-<h1>Public Places</h1>
-<div class="col-sm-6">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title text-info"><%= @user.username %></h5>
-      <p class="card-text text-muted">Shared places: </p>
-      <%= link_to 'Back', users_path, :class => "btn btn-outline-secondary" %>
-    </div>
-  </div>
+<div class="row">
+<h1>Public Places Shared by <%= @user.username %></h1>
 </div>
+  <div class="row">
+    <% @public_place_share_with_this_user.each do |place| %>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-info"><%= place.name %></h5>
+            <p class="card-text text-muted">Shared by: <%= place.users.pluck("username").first %></p>          
+            <% if current_user %>
+              <% if current_user.id === place.place_permissions.pluck("user_id").first%>
+                <%= link_to 'Show', place, :class => "btn btn-outline-info" %>
+                <%= link_to 'Edit', edit_place_path(place), :class => "btn btn-outline-warning" %>
+                <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
+              <% else %>
+                <%= link_to 'Show', place, :class => "btn btn-outline-info btn-block" %>
+              <% end %>
+            <% else %>
+              <%= link_to 'Show', place, :class => "btn btn-outline-info btn-block" %>
+            <% end %>
+          </div>
+        </div>
+        <p></p>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'Back', :back, :class => "btn btn-outline-secondary btn-block" %>
