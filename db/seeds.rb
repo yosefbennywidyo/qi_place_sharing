@@ -14,14 +14,14 @@ puts "User created: #{User.count}"
 
 first_user = User.first
 
-first_user.places.create!(name: "Candi Borobudur", lat: 7.607810, lon: 110.203762)
-first_user.places.create!(name: "Candi Gatotkaca", lat: 7.208641, lon: 109.905962, public_status: true)
-first_user.places.create!(name: "Candi Prambanan", lat: 7.751978, lon: 110.491478, public_status: true)
+first_user.places.create!(name: "Candi Borobudur", lat: -7.607810, lon: 110.203762)
+first_user.places.create!(name: "Candi Gatotkaca", lat: -7.208641, lon: 109.905962, public_status: true)
+first_user.places.create!(name: "Candi Prambanan", lat: -7.751978, lon: 110.491478, public_status: true)
 
 second_user = User.second
-second_user.places.create!(name: "Candi Dwarawati", lat: 7.197528, lon: 109.910843)
-second_user.places.create!(name: "Bima Temple", lat: 7.214271, lon: 109.910532, public_status: true)
-second_user.places.create!(name: "Candi Gedong Songo", lat: 7.209888, lon: 110.342114, public_status: true)
+second_user.places.create!(name: "Candi Dwarawati", lat: -7.197528, lon: 109.910843)
+second_user.places.create!(name: "Bima Temple", lat: -7.214271, lon: 109.910532, public_status: true)
+second_user.places.create!(name: "Candi Gedong Songo", lat: -7.209888, lon: 110.342114, public_status: true)
 
 puts "Place created: #{Place.count}"
 
