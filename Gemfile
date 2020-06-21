@@ -25,6 +25,10 @@ gem 'jbuilder', '~> 2.7'
 # Devise for authentication
 gem 'devise'
 
+gem 'gmaps4rails'
+gem 'underscore-rails'
+gem 'coffee-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
