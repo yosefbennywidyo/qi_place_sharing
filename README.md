@@ -1,6 +1,7 @@
 # Place Sharing Site
-
 Maps form an important part of our life now. Your task is to make an application which would allow one to share a location with other people.
+
+[Check live application here](https://qi-place-sharing.herokuapp.com/)
 
 ## Project requirements:
 - Node version  : 12.16.1
@@ -47,7 +48,7 @@ rspec
 ```
 
 ## Testing the app
-All user email using `password` as their password
+All users email using `password` as their password
 - user0@placesharing.com
 - user1@placesharing.com
 - user2@placesharing.com
