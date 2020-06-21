@@ -1,24 +1,47 @@
-# README
+# Place Sharing Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Maps form an important part of our life now. Your task is to make an application which would allow one to share a location with other people.
 
-Things you may want to cover:
+## Project requirements:
+- Node version  : 12.16.1
+- Ruby version  : 2.7.1
+- Rails version : 6.0.3.2
+- Yarn version  : 1.22.4
 
-* Ruby version
+## Install Ruby, Ruby on Rails, Git, and Database
+### Mac
+Please follow this article to [install Ruby, Ruby on Rails, Git, and Database on MacOs](https://gorails.com/setup/osx/10.15-catalina)
 
-* System dependencies
+### Ubuntu
+Please follow this article to [install Ruby, Ruby on Rails, Git, and Database on Ubuntu](https://gorails.com/setup/ubuntu/20.04)
 
-* Configuration
+### Windows
+Please follow this article to [install Ruby, Ruby on Rails, Git, and Database on Windows](https://gorails.com/setup/ubuntu/20.04)
 
-* Database creation
+## Install NodeJs and Yarn
+### Mac
+Please follow this article to [install NodeJs on Mac](https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/#installation-on-a-mac-or-linux)
 
-* Database initialization
+### Ubuntu
+Please follow this article to [install NodeJs on Ubuntu](https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/#installation-on-a-mac-or-linux)
 
-* How to run the test suite
+### Windows
+Please follow this article to [install NodeJs on Windows](https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/#installation-on-windows)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Run project locally
+```bash
+git clone https://github.com/fybwid/qi_place_sharing.git 
+cd qi_place_sharing
+bundle install
+rails db:setup
+rails webpacker:install # press `n` when asked about `config/webpacker.yml` and `config/webpack/environment.js`
+rails assets:precompile
+rails webpacker:compile
+rails s
+```
 
-* Deployment instructions
-
-* ...
+### Run testing
+```bash
+cd qi_place_sharing
+rspec
+```
