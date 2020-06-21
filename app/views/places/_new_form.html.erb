@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :username %>
-    <%= form.collection_check_boxes :users, User.all, :id, :username %>
+    <%= form.collection_check_boxes :users, User.all.where.not(id: current_user.id), :id, :username %>
   </div>
 
   <div class="actions">
